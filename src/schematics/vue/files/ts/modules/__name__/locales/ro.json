@@ -1,0 +1,31 @@
+{
+  "<%= lowerCase(name) %>": {
+    "title": "Catalogul orașelor",
+    "headers": {},
+    "form": {
+      "header": {
+        "create": "Adăugare",
+        "edit": "Redactare"
+      },
+      "fields": {
+        "name_ro": "Denumirea RO",
+        "name_en": "Denumirea EN",
+        "name_ru": "Denumirea RU"
+      }
+    },
+    "modals": {
+      "delete": {
+        "header": "Ștergere!",
+        "message": "Sunteți siguri că doriți sa ștergeți?"
+      },
+      "alert": {
+        "successful-removal": "șters cu succes!",
+        "successful-create": "Adăugat cu succes!",
+        "successful-edit": "Redactat cu succes!"
+      }
+    },
+    "buttons": {
+      "create": "Adaugă"
+    }
+  }
+}

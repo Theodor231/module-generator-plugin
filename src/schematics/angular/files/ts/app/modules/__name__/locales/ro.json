@@ -1,0 +1,22 @@
+{
+  "<%= lowerCase(name) %>": {
+    "headers": {
+      "create": "Adaugare <%= classify(name) %>",
+      "edit": "Editeare <%= classify(name) %>"
+    },
+    "title": "<%= classify(name) %>",
+    "fields": {
+      "title": "Users",
+      "name": "Nume",
+      "email": "Email",
+      "role": "Rol",
+      "password": "Parola",
+      "avatar": "Avatar"
+    },
+    "buttons": {
+      "create": "Adauga <%= classify(name) %>",
+      "load_data": "Incarca datele",
+      "open_filter": "Deschide filtrele"
+    }
+  }
+}

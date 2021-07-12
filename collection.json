@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "nest": {
+      "description": "Schematic to generate a dynamic module.",
+      "factory": "./lib/schematics/nest/nest.factory#main",
+      "schema": "./lib/schematics/nest/schema.json"
+    },
+    "angular": {
+      "description": "Schematic to generate angular module.",
+      "factory": "./lib/schematics/angular/angular.factory#main",
+      "schema": "./lib/schematics/angular/schema.json"
+    },
+    "nest-app": {
+      "description": "Schematic to generate nest app.",
+      "factory": "./lib/schematics/nest-app/angular.factory#main",
+      "schema": "./lib/schematics/nest-app/schema.json"
+    },
+    "ng-app": {
+      "description": "Schematic to generate angular app.",
+      "factory": "./lib/schematics/ng-app/ng.factory#main",
+      "schema": "./lib/schematics/ng-app/schema.json"
+    },
+    "ng-new": {
+      "description": "Schematic to generate angular app.",
+      "factory": "./lib/schematics/ng-app/ng.factory#main",
+      "schema": "./lib/schematics/ng-app/schema.json"
+    }
+  }
+}

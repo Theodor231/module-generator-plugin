@@ -1,0 +1,16 @@
+[
+  {
+    "text": "ID",
+    "value": "id",
+    "width": "1em"
+  },
+  {
+    "text": "Code",
+    "value": "code",
+    "width": "1em"
+  },
+  {
+    "text": "Name",
+    "value": "name"
+  }
+]

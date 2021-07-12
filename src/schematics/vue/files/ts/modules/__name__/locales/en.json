@@ -1,0 +1,31 @@
+{
+  "<%= lowerCase(name) %>": {
+    "title": "Catalogue",
+    "headers": {},
+    "form": {
+      "header": {
+        "create": "Add",
+        "edit": "Edit"
+      },
+      "fields": {
+        "name_ro": "Name RO",
+        "name_en": "Name EN",
+        "name_ru": "Name RU"
+      }
+    },
+    "modals": {
+      "delete": {
+        "header": "Delete",
+        "message": "Are you sure you want to delete this?"
+      },
+      "alert": {
+        "successful-removal": "Successfully deleted!",
+        "successful-create": "Successfully added!",
+        "successful-edit": "Successfully edited!"
+      }
+    },
+    "buttons": {
+      "create": "Add"
+    }
+  }
+}

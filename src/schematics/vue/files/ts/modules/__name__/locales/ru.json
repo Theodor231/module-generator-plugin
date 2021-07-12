@@ -1,0 +1,31 @@
+{
+  "<%= lowerCase(name) %>": {
+    "title": "Каталог ",
+    "headers": {},
+    "form": {
+      "header": {
+        "create": "Добавление ",
+        "edit": "Редактирование"
+      },
+      "fields": {
+        "name_ro": "Название RO",
+        "name_en": "Название EN",
+        "name_ru": "Название RU"
+      }
+    },
+    "modals": {
+      "delete": {
+        "header": "Удаление",
+        "message": "Уверены что хотите удалить?"
+      },
+      "alert": {
+        "successful-removal": "Успешно удалено!",
+        "successful-create": "Успешно добавлен!",
+        "successful-edit": "Успешно отредактирован!"
+      }
+    },
+    "buttons": {
+      "create": "Добавить"
+    }
+  }
+}
