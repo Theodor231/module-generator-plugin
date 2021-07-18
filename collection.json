@@ -11,7 +11,7 @@
       "factory": "./lib/schematics/angular/angular.factory#main",
       "schema": "./lib/schematics/angular/schema.json"
     },
-    "nest-app": {
+    "application": {
       "description": "Schematic to generate nest app.",
       "factory": "./lib/schematics/nest-app/angular.factory#main",
       "schema": "./lib/schematics/nest-app/schema.json"
