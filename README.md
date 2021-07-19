@@ -56,7 +56,7 @@ npm i -g module-generator-plugin
 
 4. run command to create new project:
 ```
-nest g -c <global node_modules path>/module-generator-plugin nest-app
+nest new -c <global node_modules path>/module-generator-plugin
 ```
 - type the name of project
 - got to project directory
