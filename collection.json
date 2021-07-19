@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "$schema": "node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "nest": {
       "description": "Schematic to generate a dynamic module.",
