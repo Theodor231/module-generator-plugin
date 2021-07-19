@@ -16,7 +16,7 @@ npm i -g module-generator-plugin
 ng new -c <global node_modules path>/node_modules/module-generator-plugin
 ```
 - type the name of project
-- got to project directory
+- go to project directory
   ``cd <project name>``
 - run npm install ``npm i``
 - run app ``npm run serve``
