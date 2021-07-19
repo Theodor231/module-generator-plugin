@@ -31,7 +31,7 @@ ng new -c <global node_modules path>/node_modules/module-generator-plugin
 2. config your package.json, add new script:
 ```
 "scripts": {
-    "create": "ng g <global node_modules path>/module-generator-plugin angular"
+    "create": "ng g <global node_modules path>/module-generator-plugin:ng-module"
 }
 ```
 3. Just use it on project
@@ -76,7 +76,7 @@ nest new -c <global node_modules path>/module-generator-plugin
 2. config your package.json, add new script:
 ```
 "scripts": {
-    "create": "nest g -c <global node_modules path>/module-generator-plugin nest"
+    "create": "nest g -c <global node_modules path>/module-generator-plugin nest-module"
 }
 ```
 3. Just use it on project
