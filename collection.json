@@ -1,12 +1,12 @@
 {
   "$schema": "node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "ng-module": {
+    "nest-module": {
       "description": "Schematic to generate a dynamic module.",
       "factory": "./lib/schematics/nest/nest.factory#main",
       "schema": "./lib/schematics/nest/schema.json"
     },
-    "nest-module": {
+    "ng-module": {
       "description": "Schematic to generate angular module.",
       "factory": "./lib/schematics/angular/angular.factory#main",
       "schema": "./lib/schematics/angular/schema.json"
