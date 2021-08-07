@@ -86,3 +86,20 @@ npm run create <module name>
 It will be create new module to src/modules and autoimport it on app.module
 
 
+### For Linux
+
+create shurtcuts for operation system
+
+``$ nano ~/.bashrc``
+
+add 2 lines:
+1. For Angular:
+```
+alias new-ng='ng new -c <global node_modules path>/module-generator-plugin'
+```
+2. For NestJS:
+```
+alias new-nest='nest new -c <global node_modules path>/module-generator-plugin'
+```
+
+After this, restart terminal and use as command ``new-ng`` - for Angular app and ``new-nest`` for NestJS app.
