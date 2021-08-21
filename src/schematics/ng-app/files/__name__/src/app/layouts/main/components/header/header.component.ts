@@ -1,18 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/_services/api/auth.service';
-import { ConfirmService } from 'src/app/_services/helpers/confirm.service';
-import { GeneralService } from 'src/app/_services/general.service';
-import { LocalizationService } from 'src/app/_services/helpers/localization.service';
+import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "src/app/_services/api/auth.service";
+import { ConfirmService } from "src/app/_services/helpers/confirm.service";
+import { GeneralService } from "src/app/_services/general.service";
+import { LocalizationService } from "src/app/_services/helpers/localization.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
-  @Input() moduleName = '';
-  showProfile = false as boolean;
+  @Input() moduleName = "";
+  showIcon = false as boolean;
   user = {} as any;
   constructor(
     public generalService: GeneralService,
@@ -33,25 +33,33 @@ export class HeaderComponent implements OnInit {
   toggleSideBar(): void {
     this.generalService.toggleSideBar();
   }
+  show(): void {
+    this.showIcon = true;
+  }
 
+  hide(): void {
+    setTimeout(() => {
+      this.showIcon = false;
+    }, 200);
+  }
   module(): string {
     return this.localization.translate(`${this.moduleName}.title`);
   }
 
-  toggleProfile(): void {
-    this.showProfile = !this.showProfile;
+  showProfile(): void {
+    (document.getElementById("profile") as HTMLDivElement).focus();
   }
 
   async logout(): Promise<void> {
     this.confirmService.setConfirm({
       accept: () => {
         this.authService.logout().subscribe(() => {
-          localStorage.removeItem('credentials');
-          this.router.navigateByUrl('/auth');
+          localStorage.removeItem("credentials");
+          this.router.navigateByUrl("/auth");
         });
       },
-      title: 'Logout!',
-      message: 'Are you sure you want to exit?',
+      title: "Logout!",
+      message: "Are you sure you want to exit?",
     });
   }
 }

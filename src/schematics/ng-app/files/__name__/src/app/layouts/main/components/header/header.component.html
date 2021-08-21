@@ -1,10 +1,8 @@
-<div
-  class="header box-shadow d-flex align-center space-between full-width"
->
+<div class="header box-shadow d-flex align-center space-between full-width">
   <div class="d-flex align-center justify-center">
     <div class="mx-20">
       <div class="cursor-pointer" (click)="toggleSideBar()">
-        <icon text="light">menu</icon>
+        <mdi-icon icon="menu" size="32"></mdi-icon>
       </div>
     </div>
     <div class="ml-10">{{ module() }}</div>
@@ -14,10 +12,13 @@
     <div class="d-flex align-center justify-center mx-20">
       <div
         color="light"
+        tabindex="0"
         text="primary"
-        (click)="toggleProfile()"
         class="d-flex align-center cursor-pointer mt-2 justify-center avatar position-relative"
         hidden
+        #profile
+        (focus)="show()"
+        (blur)="hide()"
       >
         <ng-container
           class="account"
@@ -32,9 +33,10 @@
         </ng-container>
 
         <ng-template #avatar>
-          <span>{{
-            user.name && user.name.split("").splice(0, 2).join("").toUpperCase()
-          }}</span>
+          <span
+            >{{ user.name && user.name.split("").splice(0,
+            2).join("").toUpperCase() }}</span
+          >
         </ng-template>
       </div>
     </div>
@@ -45,7 +47,7 @@
   color="light"
   text="primary"
   class="profile br-3 box-shadow"
-  *ngIf="showProfile"
+  [class.hidden]="!showIcon"
 >
   <div class="d-flex pa-10 align-center">
     <div
@@ -67,9 +69,10 @@
         hidden
       >
         <div class="text-bold">
-          <span>{{
-            user.name && user.name.split("").splice(0, 2).join("").toUpperCase()
-          }}</span>
+          <span
+            >{{ user.name && user.name.split("").splice(0,
+            2).join("").toUpperCase() }}</span
+          >
         </div>
       </div>
     </ng-template>
@@ -84,7 +87,7 @@
     routerLink="profile"
   >
     <div>
-      <icon>account_circle</icon>
+      <mdi-icon icon="account"></mdi-icon>
     </div>
     <div class="ml-10">
       <span translate="profile"></span>
@@ -96,7 +99,7 @@
     (click)="logout()"
   >
     <div class=".dotted">
-      <icon>logout</icon>
+      <mdi-icon icon="logout"></mdi-icon>
     </div>
     <div class="ml-10">
       <span translate="logout"></span>
