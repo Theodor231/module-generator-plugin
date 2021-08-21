@@ -48,8 +48,7 @@ function transform(options: ModOptions): ModOptions {
   target.type = "module";
 
   let location: Location = new NameParser().parse(target);
-  console.log(target)
-  console.log(location)
+
   target.name = strings.dasherize(location.name);
   target.path = join(strings.dasherize(location.path) as Path);
   target.language = "ts";

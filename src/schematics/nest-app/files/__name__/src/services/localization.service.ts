@@ -47,7 +47,6 @@ export class LocalizationService {
     // });
 
     this.messages = messages;
-    console.log(messages, 'messages');
   }
 
   translate(translate): string {

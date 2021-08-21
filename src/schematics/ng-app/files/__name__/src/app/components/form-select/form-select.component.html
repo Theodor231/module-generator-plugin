@@ -1,13 +1,16 @@
-<div class="input-block full-width">
+<div class="input-block full-width" >
   <div
     class="form__input full-width"
     [class.required]="
       control.errors && control.errors.required && control.touched
     "
+    [class.outlined]="outlined"
+    [class.borderBottom]="!outlined"
   >
     <small
       class="form__input--label"
-      *ngIf="control.touched || control.value"
+      [class.outline]="outlined"
+      *ngIf="control.value"
       text="text"
       >{{ label }}*</small
     >
@@ -19,7 +22,10 @@
           text="text"
           [value]="getValue()"
           class="select__selection"
-          (click)="toggle()"
+          (focus)="toggle()"
+          (blur)="toggle()"
+          [placeholder]="label"
+          [class.inputBorder]="!outlined"
         />
         <div class="select__items elevation-1" *ngIf="showItems">
           <ng-container *ngIf="items.length">
@@ -70,17 +76,9 @@
           </ng-container>
         </div>
       </div>
-      <div
-        *ngIf="!control.touched && !control.value"
-        class="form__input--label position-absolute"
-        style="top: 10px; left: 7px; font-size: 14px"
-        color="placeholder"
-      >
-        {{ label }}*
-      </div>
     </div>
   </div>
-  <div class="form__error text-left">
+  <div class="form__error text-left" *ngIf="control.dirty || control.touched|| error">
     <small
       class="form__error--text"
       [class.display-error]="showErrors() || error"

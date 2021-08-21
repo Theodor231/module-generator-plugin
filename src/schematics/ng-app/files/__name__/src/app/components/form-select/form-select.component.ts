@@ -17,7 +17,9 @@ export class FormSelectComponent {
   @Input() field;
   @Input() error = "" as string;
   @Input() multiple;
+  @Input() outlined = false as boolean;
   @Input() items = [] as Array<any>;
+
   roles = [
     { value: 1, text: "Admin" },
     { value: 2, text: "Tester" },
@@ -39,11 +41,12 @@ export class FormSelectComponent {
   selectItem(item: any) {
     this.selectedItem = item;
     this.control.setValue(this.selectedItem[this.itemValue]);
-    this.toggle();
   }
 
   toggle(): void {
-    this.showItems = !this.showItems;
+    setTimeout(() => {
+      this.showItems = !this.showItems;
+    }, 200);
   }
 
   isInArray(item: any): boolean {

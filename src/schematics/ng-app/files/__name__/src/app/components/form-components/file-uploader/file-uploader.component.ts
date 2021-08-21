@@ -14,6 +14,11 @@ export class FileUploaderComponent {
   } as any;
   @Input() field;
   @Input() error = '' as string;
+  @Input() outlined = false as boolean;
+  @Input() dense = false as boolean;
+
+  touched = false as boolean;
+
 
   constructor(public helpers: HelpersService) {}
 
@@ -138,5 +143,9 @@ export class FileUploaderComponent {
       this.control.touched &&
       this.control.invalid
     );
+  }
+
+  toggleTouched(): void {
+    this.touched = !this.touched;
   }
 }

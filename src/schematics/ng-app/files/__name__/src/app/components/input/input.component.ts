@@ -1,21 +1,24 @@
-import { Component, Input } from '@angular/core';
-import { HelpersService } from '../../_services/helpers.service';
+import { Component, Input } from "@angular/core";
+import { HelpersService } from "../../_services/helpers.service";
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'form-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
+  selector: "form-input",
+  templateUrl: "./input.component.html",
+  styleUrls: ["./input.component.scss"],
 })
 export class InputComponent {
-  @Input() icon = '';
-  @Input() label = '';
-  @Input() type = 'text' as string;
+  @Input() icon = "";
+  @Input() label = "";
+  @Input() type = "text" as string;
   @Input() control = {
     errors: {} as any,
   } as any;
   @Input() field;
-  @Input() error = '' as string;
+  @Input() error = "" as string;
+  @Input() outlined = false as boolean;
+  @Input() dense = false as boolean;
+  touched = false as boolean;
 
   constructor(public helpers: HelpersService) {}
 
@@ -25,5 +28,9 @@ export class InputComponent {
       this.control.touched &&
       this.control.invalid
     );
+  }
+
+  toggleTouched(): void {
+    this.touched = !this.touched;
   }
 }

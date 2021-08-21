@@ -1,22 +1,36 @@
 <div class="input-block" *ngIf="control">
   <div
     class="form__input"
+    [ngClass]="{'py-5': !dense}"
     [class.required]="
       control.errors && control.errors.required && control.touched
     "
+    [class.outlined]="outlined"
+    [class.borderBottom]="!outlined"
+    [class.activeBorder]="!outlined && touched"
   >
-    <small *ngIf="control.value" class="form__input--label" text="text"
+    <small
+      *ngIf="control.value"
+      [class.outline]="outlined"
+      class="form__input--label"
+      text="text"
       >{{ label }}*</small
     >
     <div class="d-flex full-width align-center">
-      <div [class]="icon" style="font-size: 16px"></div>
-      <div class="input-file full-width d-flex align-center" text="text">
+      <div [class]="icon" style="font-size: 16px;"></div>
+      <div
+        class="input-file full-width d-flex align-center"
+        [ngClass]='{"pt-5": outlined && !dense}'
+        text="text"
+      >
         <span class="material-icons cursor-pointer" (click)="selectFile()"
           >attach_file</span
         >
         <input
           type="text"
           readonly
+          (focus)="toggleTouched()"
+          (blur)="toggleTouched()"
           text="text"
           [placeholder]="label"
           [class.wrong]="control.errors && !control.value && control.touched"
@@ -38,11 +52,11 @@
         accept=".jpg, .jpeg, .png"
         (change)="setFile($event)"
         type="file"
-        style="visibility: hidden"
+        style="visibility: hidden;"
       />
     </div>
   </div>
-  <div class="form__error text-left">
+  <div class="form__error text-left"> 
     <small
       class="form__error--text"
       [class.display-error]="showErrors() || error"

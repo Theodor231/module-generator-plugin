@@ -1,6 +1,6 @@
 {
   "name": "<%= lowerCase(name) %>",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "create": "ng g /usr/local/lib/node_modules/module-generator-plugin:angular",
     "ng": "ng",

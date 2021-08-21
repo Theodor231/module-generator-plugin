@@ -10,21 +10,14 @@
     position: relative;
     //margin-top: 20px;
     max-width: 100%;
-    padding: 5px 0;
 
     input {
-      height: 35px;
+      height: 30px;
       width: 100%;
       outline: none;
-      padding: 0 5px;
       border: none;
-      border-bottom: 1px solid var(--input-text);
       background: transparent;
       margin-left: 0.2rem;
-
-      &:focus {
-        border-bottom: 2px solid var(--primary);
-      }
 
       &:focus:placeholder-shown {
         .form__input--label {
@@ -97,4 +90,31 @@
   100% {
     transform: scale(1.01);
   }
+}
+
+
+
+
+.outlined {
+  border: 1px solid rgb(114, 114, 114);
+  border-radius: 5px;
+}
+
+.outline {
+  top: -7px !important;
+  left: 10px;
+  background-color: var(--light);
+}
+
+
+.borderBottom {
+  border-bottom: 1px solid #898989;
+}
+
+.inputBorder {
+  border-bottom: 1px solid var(--input-text);
+}
+
+.activeBorder {
+  border-bottom: 2px solid var(--primary) !important;
 }
