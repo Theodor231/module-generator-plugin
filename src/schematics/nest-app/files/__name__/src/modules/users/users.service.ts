@@ -1,26 +1,30 @@
-import { Injectable } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, ILike } from 'typeorm';
-import { User } from './entities/user.entity';
-import { deleteFile } from '../../helpers/files-utils';
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { CreateUserDto } from "./dto/create-user.dto";
+import { UpdateUserDto } from "./dto/update-user.dto";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository, ILike } from "typeorm";
+import { User } from "./entities/user.entity";
+import { deleteFile } from "../../helpers/files-utils";
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private repository: Repository<User>,
-  ) { }
+    private repository: Repository<User>
+  ) {}
   create(createUserDto: CreateUserDto) {
     const user = this.repository.create(createUserDto);
     return this.repository.save(user);
   }
 
   async findOne(id: number) {
-    const user = await this.repository.findOne(id);
-    delete user.password;
-    return user;
+    try {
+      const user = await this.repository.findOneOrFail(id);
+      delete user.password;
+      return user;
+    } catch (e) {
+      throw new NotFoundException(e);
+    }
   }
 
   async findAll(query): Promise<any> {
@@ -48,11 +52,11 @@ export class UsersService {
     });
 
     const headers = [
-      { value: 'id', text: 'ID' },
-      { value: 'name', text: 'Name' },
-      { value: 'roleId', text: 'Role' },
-      { value: 'avatar', text: 'Avatar' },
-      { value: 'email', text: 'Email' },
+      { value: "id", text: "ID" },
+      { value: "name", text: "Name" },
+      { value: "roleId", text: "Role" },
+      { value: "avatar", text: "Avatar" },
+      { value: "email", text: "Email" },
     ];
 
     return {
@@ -64,23 +68,31 @@ export class UsersService {
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {
-    const item: any = await this.repository.findOne(+id);
-    if (item.avatar) {
-      await deleteFile(item.avatar.path);
+    try {
+      const item: any = await this.repository.findOne(+id);
+      if (item.avatar) {
+        await deleteFile(item.avatar.path);
+      }
+      await this.repository.update(
+        +id,
+        JSON.parse(JSON.stringify(updateUserDto))
+      );
+      return this.repository.findOne(id);
+    } catch (e) {
+      throw new NotFoundException(e);
     }
-    await this.repository.update(
-      +id,
-      JSON.parse(JSON.stringify(updateUserDto)),
-    );
-    return this.repository.findOne(id);
   }
 
   async remove(id: number) {
-    const item: any = await this.repository.findOne(+id);
-    if (item.avatar) {
-      await deleteFile(item.avatar.path);
+    try {
+      const item: any = await this.repository.findOneOrFail(+id);
+      if (item.avatar) {
+        await deleteFile(item.avatar.path);
+      }
+      await this.repository.delete(id);
+      return true;
+    } catch (e) {
+      throw new NotFoundException(e);
     }
-    await this.repository.delete(id);
-    return true;
   }
 }

@@ -1,17 +1,17 @@
-import { Injectable } from '@nestjs/common';
-import { CreateRoleDto } from './dto/create-role.dto';
-import { UpdateRoleDto } from './dto/update-role.dto';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Connection, Repository, ILike } from 'typeorm';
-import { Role } from './entities/role.entity';
-import permissions from 'src/services/permissions';
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { CreateRoleDto } from "./dto/create-role.dto";
+import { UpdateRoleDto } from "./dto/update-role.dto";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Connection, Repository, ILike } from "typeorm";
+import { Role } from "./entities/role.entity";
+import permissions from "src/services/permissions";
 
 @Injectable()
 export class RolesService {
   constructor(
     @InjectRepository(Role)
     private repository: Repository<Role>,
-    private connection: Connection,
+    private connection: Connection
   ) {}
 
   async create(createRoleDto: CreateRoleDto) {
@@ -48,14 +48,14 @@ export class RolesService {
     const [result, total] = await this.repository.findAndCount({
       take: take,
       skip: skip,
-      where
+      where,
     });
 
     const headers = [
-      { value: 'id', text: 'ID' },
-      { value: 'name', text: 'Name ' },
-      { value: 'alias', text: 'Alias' },
-      { value: 'guard', text: 'Guard' },
+      { value: "id", text: "ID" },
+      { value: "name", text: "Name " },
+      { value: "alias", text: "Alias" },
+      { value: "guard", text: "Guard" },
     ];
 
     return {
@@ -67,7 +67,11 @@ export class RolesService {
   }
 
   findOne(id: number) {
-    return this.repository.findOne(+id);
+    try {
+      return this.repository.findOne(+id);
+    } catch (e) {
+      throw new NotFoundException(e);
+    }
   }
 
   async list() {
@@ -76,15 +80,23 @@ export class RolesService {
   }
 
   update(id: number, updateRoleDto: UpdateRoleDto) {
-    return this.repository.update(id, updateRoleDto);
+    try {
+      return this.repository.update(id, updateRoleDto);
+    } catch (e) {
+      throw new NotFoundException(e);
+    }
   }
 
   remove(id: number) {
-    return this.repository.delete(id);
+    try {
+      return this.repository.delete(id);
+    } catch (e) {
+      throw new NotFoundException(e);
+    }
   }
 
   async addPermissions(role: string): Promise<void> {
-    const repository = this.connection.getRepository('permissions');
+    const repository = this.connection.getRepository("permissions");
 
     for (const permission in permissions.guest) {
       const entity = permissions.guest;
