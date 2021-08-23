@@ -1,18 +1,21 @@
 {
-    "type": "postgres",
-    "host": "localhost",
-    "port": 5432,
-    "username": "postgres",
-    "password": "123",
-    "database": "<%= lowerCase(name) %>",
-    "dropSchema": false,
-    "synchronize": true,
-    "logging": false,
-    "migrationsRun": false,
-    "entities": ["dist/**/*.entity{.ts,.js}"],
-    "migrations": ["dist/**/db/migrations/*{.ts, .js}"],
-    "cli": {
-      "entitiesDir": "src",
-      "migrationsDir": "db/migrations"
-  }
-  }
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "postgres",
+  "password": "123",
+  "database": "<%= lowerCase(name) %>",
+  "dropSchema": false,
+  "synchronize": true,
+  "logging": false,
+  "migrationsRun": false,
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "migrations": ["dist/**/db/migrations/*{.ts, .js}"],
+  "cli": {
+    "entitiesDir": "src",
+    "migrationsDir": "db/migrations"
+  },
+
+  "factories": ["dist/**/*.factory{.ts,.js}"],
+  "seeds": ["dist/**/*.seeder{.ts,.js}"]
+}
