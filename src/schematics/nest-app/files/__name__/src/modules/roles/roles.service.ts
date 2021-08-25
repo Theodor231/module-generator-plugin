@@ -1,10 +1,9 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, NotFoundException, InternalServerErrorException } from "@nestjs/common";
 import { CreateRoleDto } from "./dto/create-role.dto";
 import { UpdateRoleDto } from "./dto/update-role.dto";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Connection, Repository, ILike } from "typeorm";
 import { Role } from "./entities/role.entity";
-import permissions from "src/services/permissions";
 
 @Injectable()
 export class RolesService {
@@ -15,15 +14,13 @@ export class RolesService {
   ) {}
 
   async create(createRoleDto: CreateRoleDto) {
-    const role = this.repository.create(createRoleDto);
     try {
+      const role = this.repository.create(createRoleDto);
       await this.repository.save(role);
-      await this.addPermissions(role.alias);
+      return role;
     } catch (e) {
-      console.log(e);
+      throw new InternalServerErrorException(e);
     }
-
-    return role;
   }
 
   async findAll(query): Promise<any> {
@@ -66,57 +63,36 @@ export class RolesService {
     };
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
     try {
-      return this.repository.findOne(+id);
+      return await this.repository.findOne(+id);
     } catch (e) {
       throw new NotFoundException(e);
     }
   }
 
   async list() {
-    const items = await this.repository.find();
-    return items.map((item: any) => ({ value: item.id, text: item.alias }));
+    try {
+      const items = await this.repository.find();
+      return items.map((item: any) => ({ value: item.id, text: item.alias }));
+    } catch (e) {
+      throw new InternalServerErrorException(e);
+    }
   }
 
-  update(id: number, updateRoleDto: UpdateRoleDto) {
+  async update(id: number, updateRoleDto: UpdateRoleDto) {
     try {
-      return this.repository.update(id, updateRoleDto);
+      return await this.repository.update(id, updateRoleDto);
     } catch (e) {
       throw new NotFoundException(e);
     }
   }
 
-  remove(id: number) {
+  async remove(id: number) {
     try {
-      return this.repository.delete(id);
+      return await this.repository.delete(id);
     } catch (e) {
       throw new NotFoundException(e);
-    }
-  }
-
-  async addPermissions(role: string): Promise<void> {
-    const repository = this.connection.getRepository("permissions");
-
-    for (const permission in permissions.guest) {
-      const entity = permissions.guest;
-      for (const action in entity[permission]) {
-        const record: any = await repository.findOne({
-          where: { module: permission, role: role, action },
-        });
-        const newRecord = {
-          action,
-          module: permission,
-          levels: entity[permission][action].levels,
-          access: entity[permission][action].access,
-          role: role,
-          fields: entity[permission][action].fields,
-        };
-
-        if (!record) {
-          await repository.save(newRecord);
-        }
-      }
     }
   }
 }

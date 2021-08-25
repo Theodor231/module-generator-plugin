@@ -4,7 +4,7 @@
   "port": 5432,
   "username": "postgres",
   "password": "123",
-  "database": "<%= lowerCase(name) %>",
+  "database": "<%= db %>",
   "dropSchema": false,
   "synchronize": true,
   "logging": false,

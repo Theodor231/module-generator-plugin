@@ -12,9 +12,13 @@ export class UsersService {
     @InjectRepository(User)
     private repository: Repository<User>
   ) {}
-  create(createUserDto: CreateUserDto) {
-    const user = this.repository.create(createUserDto);
-    return this.repository.save(user);
+  async create(createUserDto: CreateUserDto) {
+    try {
+      const user = await this.repository.create(createUserDto);
+      return await this.repository.save(user);
+    } catch (e) {
+      throw e;
+    }
   }
 
   async findOne(id: number) {
