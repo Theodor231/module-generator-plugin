@@ -6,16 +6,14 @@
   "password": "123",
   "database": "<%= db %>",
   "dropSchema": false,
-  "synchronize": true,
+  "synchronize": false,
+  "migrationsRun": false,
   "logging": false,
-  "migrationsRun": true,
   "entities": ["dist/**/*.entity{.ts,.js}"],
-  "migrations": ["dist/**/db/migrations/*{.ts, .js}"],
+  "migrations": ["dist/db/migrations/*{.ts,.js}"],
   "cli": {
-    "entitiesDir": "src",
     "migrationsDir": "db/migrations"
   },
-
   "factories": ["dist/**/*.factory{.ts,.js}"],
   "seeds": ["dist/**/*.seeder{.ts,.js}"]
 }

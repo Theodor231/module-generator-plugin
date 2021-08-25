@@ -8,47 +8,8 @@ import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 
 @Injectable()
-export class AuthService implements OnModuleInit {
+export class AuthService  {
   constructor(private connection: Connection, private jwtService: JwtService) {}
-
-  async onModuleInit() {
-    const conn = this.connection.getRepository('user');
-    const password = await bcrypt.hash('12345678', 8);
-    const user = {
-      password,
-      name: 'admin',
-      email: 'admin@gmail.com',
-      roleId: null,
-      avatar: null,
-    };
-    const exists = await conn.findOne({
-      where: {
-        email: user.email,
-      },
-    });
-
-    if (!exists) {
-      const rolesConn = this.connection.getRepository('role');
-      const newRole: any = {
-        alias: 'admin',
-        name: 'Admin',
-        guard: 'api',
-      };
-
-      const roleExists: any = await rolesConn.findOne({
-        where: { alias: 'admin' },
-      });
-
-      if (!roleExists) {
-        const role = await rolesConn.save(newRole);
-        user.roleId = role.id;
-      } else {
-        user.roleId = roleExists.id;
-      }
-
-      await conn.save(user);
-    }
-  }
 
   async login(user: any) {
     const conn = this.connection.getRepository('user');

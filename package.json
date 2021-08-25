@@ -1,6 +1,6 @@
 {
   "name": "module-generator-plugin",
-  "version": "1.3.40",
+  "version": "1.3.43",
   "description": "Schematics for @nestjs/cli and @angular/cli",
   "author": "Teisanu Tudor <teisanutudort@gmail.com>",
   "license": "MIT",

@@ -10,9 +10,11 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { PermisionsModule } from './modules/permisions/permisions.module';
 import { LocalizationService } from './services/localization.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRoot(),
     RolesModule,
     UsersModule,
