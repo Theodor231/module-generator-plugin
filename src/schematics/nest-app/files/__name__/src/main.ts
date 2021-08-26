@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import * as express from 'express';
 import { join } from 'path';
 import * as bodyParser from 'body-parser';
-import { UnprocessableEntityException, ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from './pipes/validation.pipe';
 import { AuthGuard } from './guards/auth.guard';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
@@ -24,17 +24,7 @@ async function bootstrap() {
 
   app.enableCors();
   app.use(express.static(join(process.cwd(), '../storage/')));
-  app.useGlobalPipes(
-    new ValidationPipe({
-      transform: false,
-      exceptionFactory: (error) => {
-        return new UnprocessableEntityException({
-          errors: parseErrors(error),
-          message: 'Was given invalid data.'
-        });
-      },
-    }),
-  );
+  app.useGlobalPipes(new ValidationPipe());
   const reflector = app.get(Reflector);
   app.useGlobalGuards(new AuthGuard(reflector));
 
