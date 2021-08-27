@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0d3ddee-b257-4605-b128-403df97c35c9" name="Default Changelist" comment="" />
+    <list default="true" id="e0d3ddee-b257-4605-b128-403df97c35c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/api.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/supervisord.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/proxy/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/proxy/start_server.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/ormconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/ormconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/auth/auth.controller.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,11 +35,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/schematics/nest-app/files/__name__" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/schematics/nest-app/files/__name__" />
+      <recent name="$PROJECT_DIR$/src/schematics/nest-app/files" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/schematics/nest-app/files/__name__" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -36,6 +60,9 @@
       <updated>1626725431804</updated>
       <workItem from="1626725438100" duration="1616000" />
       <workItem from="1629973890173" duration="108000" />
+      <workItem from="1629974340138" duration="103000" />
+      <workItem from="1630054861979" duration="557000" />
+      <workItem from="1630056086822" duration="319000" />
     </task>
     <servers />
   </component>
