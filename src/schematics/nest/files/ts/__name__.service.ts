@@ -31,16 +31,25 @@ export class <%= classify(name) %>Service {
       const skip = (Number(query.page) - 1) * take || 0;
   
       const where = {} as any;
-      const filter = JSON.parse(query.filter);
-  
-      if (filter.name) {
-        where.name = ILike(`%${filter.name.toLowerCase()}%`);
+      let filter = {} as any;
+
+      if (query.filter)   {
+        filter = JSON.parse(query.filter);
+
+        if (filter.name) {
+          where.name = ILike(`%${filter.name.toLowerCase()}%`);
+        }
+
+        if (query.order) {
+          order = JSON.parse(query.order);
+        }
       }
   
       const [result, total] = await this.repository.findAndCount({
-        take: take,
-        skip: skip,
-        where
+        take,
+        skip,
+        where,
+        order,
       });
   
       const headers = [

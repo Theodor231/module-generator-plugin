@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0d3ddee-b257-4605-b128-403df97c35c9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/api.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/nginx/supervisord.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/proxy/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/proxy/start_server.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/ormconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/ormconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/roles/roles.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/roles/roles.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/users/users.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +58,8 @@
       <workItem from="1629973890173" duration="108000" />
       <workItem from="1629974340138" duration="103000" />
       <workItem from="1630054861979" duration="557000" />
-      <workItem from="1630056086822" duration="319000" />
+      <workItem from="1630056086822" duration="449000" />
+      <workItem from="1630230630946" duration="715000" />
     </task>
     <servers />
   </component>

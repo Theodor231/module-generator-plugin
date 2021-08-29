@@ -58,6 +58,8 @@
       <thead>
         <tr>
           <td
+            (click)="setSort(header.value)"
+            class="cursor-pointer"
             *ngFor="let header of headers"
             [style.width]="header.width + 'em' || 'auto'"
           >

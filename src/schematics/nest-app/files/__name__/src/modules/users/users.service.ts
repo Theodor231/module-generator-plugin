@@ -36,23 +36,34 @@ export class UsersService {
     const skip = (Number(query.page) - 1) * take || 0;
 
     const where = {} as any;
-    const filter = JSON.parse(query.filter);
+    let filter = { } as any
+    let order = { id: 1 } as any
 
-    if (filter.name) {
-      where.name = ILike(`%${filter.name.toLowerCase()}%`);
+    if (query.filter) {
+      filter = JSON.parse(query.filter);
+
+      if (filter.name) {
+        where.name = ILike(`%${filter.name.toLowerCase()}%`);
+      }
+
+      if (filter.email) {
+        where.email = ILike(`%${filter.email.toLowerCase()}%`);
+      }
+
+      if (filter.roleId) {
+        where.roleId = filter.roleId;
+      }
     }
 
-    if (filter.email) {
-      where.email = ILike(`%${filter.email.toLowerCase()}%`);
-    }
-
-    if (filter.roleId) {
-      where.roleId = filter.roleId;
+    if (query.order) {
+      order = JSON.parse(query.order);
     }
 
     const [result, total] = await this.repository.findAndCount({
-      take: take,
-      skip: skip,
+      take,
+      skip,
+      where,
+      order,
     });
 
     const headers = [

@@ -58,6 +58,10 @@ export class IndexComponent implements OnInit {
 
     params.filter = JSON.stringify(params.filter);
 
+    if (params.order) {
+      params.order = JSON.stringify(params.order);
+    }
+
     this.api
       .roles()
       .getData(params)
@@ -128,6 +132,16 @@ export class IndexComponent implements OnInit {
 
   translate(locale): string {
     return this.helpers.localization().translate(locale);
+  }
+
+  setSort(value: any): void {
+    if (this.params.order && this.params.order[value]) {
+      this.params.order[value] = this.params.order[value] === 1 ? -1 : 1;
+    } else {
+      this.params.order = { [value]: 1 };
+    }
+
+    this.loadData();
   }
 
   openConfirm(id): void {
