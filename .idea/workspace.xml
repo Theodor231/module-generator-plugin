@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e0d3ddee-b257-4605-b128-403df97c35c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/index/index.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/roles/roles.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/roles/roles.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/modules/users/users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/index/index.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/users/views/index/index.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,8 @@
       <workItem from="1629974340138" duration="103000" />
       <workItem from="1630054861979" duration="557000" />
       <workItem from="1630056086822" duration="449000" />
-      <workItem from="1630230630946" duration="715000" />
+      <workItem from="1630230630946" duration="1429000" />
+      <workItem from="1630268237537" duration="228000" />
     </task>
     <servers />
   </component>
