@@ -32,6 +32,7 @@ export class <%= classify(name) %>Service {
   
       const where = {} as any;
       let filter = {} as any;
+      let order = {} as any;
 
       if (query.filter)   {
         filter = JSON.parse(query.filter);

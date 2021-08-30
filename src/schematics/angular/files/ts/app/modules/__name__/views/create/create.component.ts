@@ -40,7 +40,7 @@ export class CreateComponent implements OnInit {
     this.loading = true;
     await this.api
       [this.module]()
-      .create(this.helpers.toFormData(this.form.value))
+      .create(this.form.value)
       .subscribe(
         () => {
           this.helpers.alert().showSuccess('Successful created');

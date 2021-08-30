@@ -45,7 +45,7 @@ export class EditComponent implements OnInit {
     this.loading = true;
     this.api
       [this.module]()
-      .edit(this.id, this.helpers.toFormData(this.form.value))
+      .edit(this.id, this.form.value)
       .subscribe(
         () => {
           this.helpers.alert().showSuccess('Successful edited.');

@@ -48,12 +48,12 @@ export class CreateComponent implements OnInit {
         },
         (e) => {
           if (e.error && e.error.hasOwnProperty('errors')) {
-            this.errors = e.errors;
+            this.errors = e.error.errors;
             setTimeout(() => {
               this.errors = {};
             }, 5000);
           }
-          this.helpers.alert().showError(e.message);
+          this.helpers.alert().showError(e.error.message);
           this.loading = false;
         },
         () => {

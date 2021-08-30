@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0d3ddee-b257-4605-b128-403df97c35c9" name="Default Changelist" comment="" />
+    <list default="true" id="e0d3ddee-b257-4605-b128-403df97c35c9" name="Default Changelist" comment="add global localization">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/create/create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/create/create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/edit/edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/_services/api/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/_services/api/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/create/create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/create/create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/edit/edit.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/schematics/nest-app/files/__name__" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/services" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
@@ -28,6 +37,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/schematics/nest-app/files/__name__/src/services" />
       <recent name="$PROJECT_DIR$/src/schematics/nest-app/files/__name__" />
       <recent name="$PROJECT_DIR$/src/schematics/nest-app/files" />
     </key>
@@ -50,11 +60,33 @@
       <workItem from="1630056086822" duration="449000" />
       <workItem from="1630230630946" duration="1429000" />
       <workItem from="1630268237537" duration="722000" />
+      <workItem from="1630311823520" duration="165000" />
+      <workItem from="1630350967147" duration="351000" />
+      <workItem from="1630357347713" duration="456000" />
     </task>
+    <task id="LOCAL-00001" summary="add global localization">
+      <created>1630311969231</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630311969231</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/lib/defaults.d.ts" />
+        <option value="$PROJECT_DIR$/lib/defaults.js" />
+        <option value="$PROJECT_DIR$/lib/schematics/vue/ng.factory.js" />
+        <option value="$PROJECT_DIR$/lib/schematics/nest/nest.factory.js" />
+        <option value="$PROJECT_DIR$/lib/schematics/ng-app/ng.factory.js" />
+        <option value="$PROJECT_DIR$/lib/schematics/angular/angular.factory.js" />
+        <option value="$PROJECT_DIR$/lib/schematics/nest-app/angular.factory.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -67,5 +99,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add global localization" />
+    <option name="LAST_COMMIT_MESSAGE" value="add global localization" />
   </component>
 </project>

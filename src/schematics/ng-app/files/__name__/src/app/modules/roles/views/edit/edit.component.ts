@@ -51,8 +51,8 @@ export class EditComponent implements OnInit {
           this.router.navigate(['ro/roles']);
         },
         (e: any) => {
-          if (e.hasOwnProperty('error')) {
-            this.errors = e.error;
+          if (e.error.hasOwnProperty('errors')) {
+            this.errors = e.error.errors;
             setTimeout(() => {
               this.errors = {};
             }, 5000);
