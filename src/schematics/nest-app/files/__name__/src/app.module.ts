@@ -9,8 +9,8 @@ import { AuthMiddleware } from './middleware/auth.middleware';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { PermisionsModule } from './modules/permisions/permisions.module';
-import { LocalizationService } from './services/localization.service';
 import { ConfigModule } from '@nestjs/config';
+import { LocalizationModule } from './services/localization.module';
 
 @Module({
   imports: [
@@ -31,7 +31,7 @@ import { ConfigModule } from '@nestjs/config';
       },
     }),
     PermisionsModule,
-    LocalizationService,
+    LocalizationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
