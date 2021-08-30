@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0d3ddee-b257-4605-b128-403df97c35c9" name="Default Changelist" comment="add global localization">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/create/create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/create/create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/angular/files/ts/app/modules/__name__/views/edit/edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/nest/files/ts/__name__.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/_services/api/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/_services/api/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/create/create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/create/create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/edit/edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/schematics/ng-app/files/__name__/src/app/modules/roles/views/edit/edit.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +55,7 @@
       <workItem from="1630268237537" duration="722000" />
       <workItem from="1630311823520" duration="165000" />
       <workItem from="1630350967147" duration="351000" />
-      <workItem from="1630357347713" duration="456000" />
+      <workItem from="1630357347713" duration="626000" />
     </task>
     <task id="LOCAL-00001" summary="add global localization">
       <created>1630311969231</created>
