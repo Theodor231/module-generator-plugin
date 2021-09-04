@@ -58,12 +58,14 @@ export class RolesService {
       order,
     });
 
-    const headers = [
-      { value: "id", text: "ID" },
-      { value: "name", text: "Name " },
-      { value: "alias", text: "Alias" },
-      { value: "guard", text: "Guard" },
-    ];
+    let headers = this.connection
+        .getMetadata(Role)
+        .ownColumns.map((column) => column.propertyName);
+
+    headers = (headers as any).map((item: string) => ({
+      value: item,
+      text: item.toUpperCase(),
+    }));
 
     return {
       headers,

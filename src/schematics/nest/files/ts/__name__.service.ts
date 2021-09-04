@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Create<%= classify(name) %>Dto } from './dto/create-<%= lowerCase(name) %>.dto';
 import { Update<%= classify(name) %>Dto } from './dto/update-<%= lowerCase(name) %>.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, ILike } from 'typeorm';
+import { Repository, ILike, Connection } from 'typeorm';
 import { <%= classify(name) %> } from './entities/<%= lowerCase(name) %>.entity';
 import { UnprocessableEntityException } from '@nestjs/common';
 
@@ -11,6 +11,7 @@ export class <%= classify(name) %>Service {
   constructor(
     @InjectRepository(<%= classify(name) %>)
     private repository: Repository<<%= classify(name) %>>,
+    private connection: Connection
   ) {}
   create(create<%= classify(name) %>Dto: Create<%= classify(name) %>Dto) {
     const <%= lowerCase(name) %> = this.repository.create(create<%= classify(name) %>Dto);
@@ -53,10 +54,14 @@ export class <%= classify(name) %>Service {
         order,
       });
   
-      const headers = [
-        { value: 'id', text: 'ID' },
-        { value: 'name', text: 'Name' }
-      ];
+    let headers = this.connection
+      .getMetadata(<%= classify(name) %>)
+      .ownColumns.map((column) => column.propertyName);
+
+    headers = (headers as any).map((item: string) => ({
+      value: item,
+      text: item.toUpperCase(),
+    }));
   
       return {
         headers,

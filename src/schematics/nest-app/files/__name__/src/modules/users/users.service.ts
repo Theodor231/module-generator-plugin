@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository, ILike } from "typeorm";
+import { Repository, ILike, Connection } from "typeorm";
 import { User } from "./entities/user.entity";
 import { deleteFile } from "../../helpers/files-utils";
 
@@ -10,7 +10,8 @@ import { deleteFile } from "../../helpers/files-utils";
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private repository: Repository<User>
+    private repository: Repository<User>,
+    private connection: Connection,
   ) {}
   async create(createUserDto: CreateUserDto) {
     try {
@@ -66,13 +67,14 @@ export class UsersService {
       order,
     });
 
-    const headers = [
-      { value: "id", text: "ID" },
-      { value: "name", text: "Name" },
-      { value: "roleId", text: "Role" },
-      { value: "avatar", text: "Avatar" },
-      { value: "email", text: "Email" },
-    ];
+    let headers = this.connection
+    .getMetadata(User)
+    .ownColumns.map((column) => column.propertyName);
+
+  headers = (headers as any).map((item: string) => ({
+    value: item,
+    text: item.toUpperCase(),
+  }));
 
     return {
       headers,
